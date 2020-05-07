@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contacts</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" tappable (click)="initNewContact();">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [hidden]="contactList.length == 0">
+    <ion-list>
+      <ion-item *ngFor="let person of contactList" tappable (click)="itemTapped(person);">
+        <ion-avatar item-start>
+          <img src="{{person.picture}}">
+        </ion-avatar>
+        <h2>{{ person.name }}</h2>
+        <p>{{ person.mobileno }}</p>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+
+  <ion-list [hidden]="contactList.length != 0">
+    <ion-item>There is no contact in your account</ion-item>
+    <!-- <ion-item>
+      <ion-avatar item-start>
+        <img src="https://ionicframework.com/docs/v3/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+      </ion-avatar>
+      <h2>Cher</h2>
+      <p>Ugh. As if.</p>
+    </ion-item> -->
+  </ion-list>
+
+</ion-content>
