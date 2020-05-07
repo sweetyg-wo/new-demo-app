@@ -34,6 +34,7 @@ export class SigninPage {
     this.userService.login(this.user).then((resp:APIResponce)=>{
       console.warn(resp);
         localStorage.setItem('token',resp.data);
+        localStorage.setItem('user',JSON.stringify(this.user));
         this.navCtrl.setRoot(ListPage);
     }).catch((error)=>{
       console.log(error);

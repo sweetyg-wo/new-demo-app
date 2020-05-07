@@ -38,4 +38,28 @@ export class LoaderProvider {
     });
     alert.present();
   }
+
+  public askConfirmation(title:string,message:string,successCB:any,errorCB:any){
+    const confirm = this.alertCtrl.create({
+      title: title,
+      message: message,
+      buttons: [
+        {
+          text: 'Disagree',
+          handler: () => {
+            console.log('Disagree clicked');
+            errorCB();
+          }
+        },
+        {
+          text: 'Agree',
+          handler: () => {
+            console.log('Agree clicked');
+            successCB();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
 }

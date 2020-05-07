@@ -9,6 +9,7 @@ import { ListPage } from '../pages/list/list';
 
 import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { ContactformComponent } from '../components/contactform/contactform';
 
@@ -25,6 +26,7 @@ import { LoaderProvider } from '../providers/loader/loader';
     ListPage,
     SigninPage,
     SignupPage,
+    ProfilePage,
     ContactformComponent,
   ],
   imports: [
@@ -39,6 +41,7 @@ import { LoaderProvider } from '../providers/loader/loader';
     ListPage,
     SigninPage,
     SignupPage,
+    ProfilePage,
     ContactformComponent
   ],
   providers: [
